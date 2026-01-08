@@ -1,7 +1,7 @@
 <!doctype html>
-
 <html lang="zh-TW">
   <head>
+    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -13,6 +13,13 @@
     <style>
       body { font-family: 'Inter', sans-serif; }
     </style>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>
   </head>
   <body>
     <div id="root"></div>
